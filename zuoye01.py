@@ -1,5 +1,3 @@
-id=1
-record=[]
 def add_record(id):
     add_name=input("请输入姓名：")
     add_number=input("请输入电话：")
@@ -41,11 +39,14 @@ def delete_record():
         if i["姓名"]==changename:
             record.remove(i)
             print("删除成功")
+            break
     else:
         print("不存在此人")
 
 
 if __name__ == "__main__":
+    id = 1
+    record = []
     while 1:
         message = """
                通讯录
@@ -59,7 +60,7 @@ if __name__ == "__main__":
         a = input("请选择操作：")
         if a=="1":
             add_record(id)
-            id=+1
+            id+=1
         elif a=="2":
             query_record()
         elif a=="3":
